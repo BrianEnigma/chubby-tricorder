@@ -46,6 +46,7 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
 
 #Tasks
 
+- [X] Determine pin connections.
 - [ ] Wire it up on the bench:
     - [ ] Test each device, individually:
         - [ ] For each external device, on by one, hook it up to the default pins.
