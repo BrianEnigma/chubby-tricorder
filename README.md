@@ -47,12 +47,12 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
 #Tasks
 
 - [X] Determine pin connections.
-- [ ] Wire it up on the bench:
-    - [ ] Test each device, individually:
-        - [ ] For each external device, on by one, hook it up to the default pins.
-        - [ ] Verify the library can communicate with the device.
-        - [ ] Move the device to your desired final set of pins.
-        - [ ] Verify the library can communicate on the new set of pins.
+- [X] Wire it up on the bench:
+    - [X] Test each device, individually:
+        - [X] For each external device, on by one, hook it up to the default pins.
+        - [X] Verify the library can communicate with the device.
+        - [X] Move the device to your desired final set of pins.
+        - [X] Verify the library can communicate on the new set of pins.
     - [ ] Test all devices in unison:
         - [ ] Start with one device, ensure it works.
         - [ ] Add another, ensure they work in tandem.
