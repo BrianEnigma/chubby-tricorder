@@ -53,16 +53,20 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
         - [X] Verify the library can communicate with the device.
         - [X] Move the device to your desired final set of pins.
         - [X] Verify the library can communicate on the new set of pins.
-    - [ ] Test all devices in unison:
-        - [ ] Start with one device, ensure it works.
-        - [ ] Add another, ensure they work in tandem.
-        - [ ] Add the next, etc.
-- [ ] Preliminary software
-    - [ ] Boot sequence animation (and also print test output on printer?)
-    - [ ] Data entry screen
-    - [ ] "Incorrect" animation (with delay to help discourage brute forcing)
-    - [ ] Several incorrect answers in a row has longer delay?
-    - [ ] Each "correct" behavior (screen, printer)
+    - [X] Test all devices in unison:
+        - [X] Start with one device, ensure it works.
+        - [X] Add another, ensure they work in tandem.
+        - [X] Add the next, etc.
+- [X] Preliminary software
+    - [X] Boot sequence animation (and also print test output on printer?)
+    - [X] Data entry screen
+    - [X] "Incorrect" animation (with delay to help discourage brute forcing)
+    - [X] Several incorrect answers in a row has longer delay?
+    - [X] Each "correct" behavior (screen, printer)
+- [ ] Wireless
+    - [ ] Transmitter and receiver Hello World
+    - [ ] Integrate transmitter into design
+    - [ ] Test with receiver
 - [ ] Enclosure (black 3MM acrylic)
     - [ ] Determine internal parts placement.
     - [ ] Preliminary laser cut pattern.
