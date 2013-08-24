@@ -67,17 +67,15 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
     - [ ] Transmitter and receiver Hello World
     - [ ] Integrate transmitter into design
     - [ ] Test with receiver
-- [ ] Enclosure (black 3MM acrylic)
-    - [ ] Determine internal parts placement.
-    - [ ] Preliminary laser cut pattern.
-    - [ ] Left/Right sides symmetric/interchangeable?
-    - [ ] Print on paper, verify parts fit, verify pieces interlock correctly.
-    - [ ] Send to Ponoko.
-    - [ ] Hole for reprogramming?  "warranty void if removed" sticker?
+- [X] Enclosure (black 3MM acrylic)
+    - [X] Determine internal parts placement.
+    - [X] Preliminary laser cut pattern.
+    - [X] Left/Right sides symmetric/interchangeable?
+    - [X] Print on paper, verify parts fit, verify pieces interlock correctly.
+    - [X] Send to Ponoko.
+    - [X] Hole for reprogramming?  "warranty void if removed" sticker?
 - [ ] Advanced/optional software
     - [ ] Bitmaps for screen and printer
         - [ ] LCARS
         - [ ] Starfleet logo
         - [ ] Trek/communicator logo
-
-
