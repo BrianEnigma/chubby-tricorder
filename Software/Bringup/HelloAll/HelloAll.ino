@@ -4,6 +4,7 @@
 #include <Adafruit_SSD1306.h>
 #include "SoftwareSerial.h"
 #include "Adafruit_Thermal.h"
+#include "VirtualWire.h"
 #include <avr/pgmspace.h>
 
 // Debug settings
@@ -39,6 +40,9 @@ int printer_RX_Pin = 12;  // This is the green wire
 int printer_TX_Pin = 13;  // This is the yellow wire
 Adafruit_Thermal printer(printer_RX_Pin, printer_TX_Pin);
 
+// Run mode
+
+char runMode[2] = {'1', 0};
 
 void startupAnimation();
 
@@ -53,6 +57,10 @@ void setup()
   
   // Printer init
   printer.begin();
+  
+  // Wireless init
+  vw_set_tx_pin(A5);
+  vw_setup(2000);	 // Bits per sec
   
   // Boot sequence
 #ifdef DEBUG_SKIP_STARTUP
@@ -128,6 +136,7 @@ void damageSplashScreen()
 // Interactively get an entry. Return the entry.
 void getEntry(char *entry, unsigned char maxLength)
 {
+  unsigned int loopCount = 100;
   char key = 0;
   char pos = 0;
   *entry = 0;
@@ -138,6 +147,7 @@ void getEntry(char *entry, unsigned char maxLength)
   display.println(F("Enter memory address\nof repair subroutine\nto execute?"));
   display.setTextSize(2);
   display.display();
+
   while(1)
   {
     key = keypad.getKey();
@@ -164,6 +174,12 @@ void getEntry(char *entry, unsigned char maxLength)
     if ('#' == key)
       return;
     delay(10);
+    if (loopCount++ >= 10)
+    {
+      vw_send((uint8_t *)runMode, 1);
+      vw_wait_tx(); // Wait until the whole message is gone
+      loopCount = 0;
+    }
   }
 }
 

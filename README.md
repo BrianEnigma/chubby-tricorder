@@ -29,7 +29,7 @@ I cut some corners to accelerate development and minimize risk.  I wanted to wor
         - jumpers, connectors
         - solder
     - tools (soldering iron, wire strippers, diagonal cutters, hot glue gun, etc.)
-- laser-cut acrylic parts
+- laser-cut acrylic parts TODO: public link to files. Materials: $12.00. Cutting: $17.50.
 - [black 3M16 screws](http://www.mcmaster.com/#91290a120/=nzdun3)
 - [black 3M nuts](http://www.mcmaster.com/#98676a100/=nzdunh)
 - [black 2M10 screws](http://www.mcmaster.com/#91290a017/=nzdv42)
