@@ -1,5 +1,6 @@
 // Receiver hooked to pin 8.
 // 128x32 SPI display hooked to 9..13
+// Also writes to serial.
 
 #include <Wire.h>
 #include <VirtualWire.h>

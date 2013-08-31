@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+        <link rel="stylesheet" href="iui/iui.css" type="text/css"/>
+        <link rel="stylesheet" href="iui/t/default/default-theme.css" type="text/css"/>
+        <script type="application/x-javascript" src="iui/iui.js"></script>
+        <style type="text/css" media="all">
+        p.bodyText {padding:0 8px;}
+        p.introText {color:red; font-size:18px; line-height:20pt;}
+        sup.footnote {font-size:9pt; line-height: 0.1em;}
+        li.modeAbout {font-weight:normal; font-size:18px; line-height:20pt; padding-right:7px;}
+        </style>
+    </head>
+    <body>
+        <div class="toolbar">
+            <h1 id="pageTitle"></h1>
+            <a id="backButton" class="button" href="#"></a>
+        </div>
+        <div id="intro" title="Introduction" selected="true">
+            <p class="bodyText">
+                <a class="whiteButton" href="#menu">Start Tricorder</a>
+            </p>
+            <p class="introText bodyText">
+                If you are seeing this message, it means that something
+                has happened. Something unexpected. Maybe your tricorder
+                is lost, damaged, or intercepted. Maybe we were never
+                able to send back a tricorder device. This is our
+                backup plan.
+            </p>
+            <p class="introText bodyText">
+                We were able to cobble together a mostly-functional 
+                tricorder using early 21st century parts<sup class="footnote">1</sup>.
+            </p>
+            <p class="bodyText" style="margin-top:100px; margin-bottom:10px;">
+                1: similar to what Data did in 1893<sup class="footnote">2</sup><br /><br/>
+                2: Time's Arrow parts 1 and 2, S05E26 &amp; S06E01
+            </p>
+        </div>
+        <ul id="menu" title="Tricorder">
+            <li class="group">Tricorder Operation</li>
+                <li class="modeAbout">Your tricorder has several different scan modes. 
+                    You will need to pick the correct mode that matches
+                    the current state of the Communications Probe. 
+                    Start with mode one and proceed from there, in
+                    order, as you unlock stages of the probe.
+                </li>
+            </li>
+            <li class="group">Tricorder Modes</li>
+                <li><a href="#mode1">Mode One</a></li>
+                <li><a href="#mode2">Mode Two</a></li>
+                <li><a href="#mode3">Mode Three</a></li>
+                <li><a href="#mode4">Mode Four</a></li>
+            </li>
+        </ul>
+        <div id="mode1" title="Mode One">
+            Hello World
+        </div>
+        <div id="mode2" title="Mode Two">
+            Hello World
+        </div>
+        <div id="mode3" title="Mode Three">
+            Hello World
+        </div>
+        <div id="mode4" title="Mode Four">
+            Hello World
+        </div>
+    </body>
+</html>

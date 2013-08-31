@@ -19,6 +19,10 @@ $(FOLDER): $(ZIP)
 $(ZIP):
 	curl -o "$(ZIP)" "$(URL)"
 
+test: $(INSTALL_FOLDER)
+	mkdir -p $(HOME)/Sites/tricorder
+	cp -vR index.html $(INSTALL_FOLDER) $(HOME)/Sites/tricorder
+
 .PHONY: clean
 clean:
 	rm -rf $(FOLDER) $(INSTAL_FOLDER)

@@ -1,9 +1,10 @@
+// Simple bring-up of the RF module using VirtualWire, connected to pin A5.
+// Enable LED while transmitting.
 #include <Wire.h>
 #include "VirtualWire.h"
 
 void setup()   
 {                
-  //Serial.begin(9600);
   pinMode(13, OUTPUT);     
   pinMode(A5, OUTPUT);     
 
@@ -15,10 +16,10 @@ void setup()
 void loop()
 {
   const char *msg = "hello";
-  digitalWrite(13, true); // Flash a light to show received good message
+  digitalWrite(13, true); // Flash light to indicate transmitting
   vw_send((uint8_t *)msg, strlen(msg));
   vw_wait_tx(); // Wait until the whole message is gone
-  digitalWrite(13, false); // Flash a light to show received good message
+  digitalWrite(13, false);
   delay(1000);
 }
 

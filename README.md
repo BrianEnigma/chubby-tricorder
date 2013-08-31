@@ -43,6 +43,7 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
 - screen
 - printer
 - button matrix
+- RF
 
 #Tasks
 
@@ -64,8 +65,8 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
     - [X] Several incorrect answers in a row has longer delay?
     - [X] Each "correct" behavior (screen, printer)
 - [ ] Wireless
-    - [ ] Transmitter and receiver Hello World
-    - [ ] Integrate transmitter into design
+    - [X] Transmitter and receiver Hello World
+    - [X] Integrate transmitter into design
     - [ ] Test with receiver
 - [X] Enclosure (black 3MM acrylic)
     - [X] Determine internal parts placement.
@@ -74,8 +75,19 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
     - [X] Print on paper, verify parts fit, verify pieces interlock correctly.
     - [X] Send to Ponoko.
     - [X] Hole for reprogramming?  "warranty void if removed" sticker?
+    - [ ] Reinforce printer edge panel
 - [ ] Advanced/optional software
     - [ ] Bitmaps for screen and printer
         - [ ] LCARS
         - [ ] Starfleet logo
         - [ ] Trek/communicator logo
+
+#Away Kit
+
+In the event of a problem during the game, I'll need to assemble an "away kit" with various repair tools.
+
+- allen wrench
+- needle-node pliers
+- multimeter
+- soldering iron?
+- 
