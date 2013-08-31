@@ -21,7 +21,7 @@ $(ZIP):
 
 test: $(INSTALL_FOLDER)
 	mkdir -p $(HOME)/Sites/tricorder
-	cp -vR index.html $(INSTALL_FOLDER) $(HOME)/Sites/tricorder
+	cp -vR $(INSTALL_FOLDER) index.html *.js *.map images $(HOME)/Sites/tricorder
 
 .PHONY: clean
 clean:

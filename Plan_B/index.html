@@ -2,16 +2,41 @@
 <html>
     <head>
         <title>Page Title</title>
-        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <link rel="stylesheet" href="iui/iui.css" type="text/css"/>
         <link rel="stylesheet" href="iui/t/default/default-theme.css" type="text/css"/>
         <script type="application/x-javascript" src="iui/iui.js"></script>
+        <script type="application/x-javascript" src="jquery-1.10.2.min.js"></script>
         <style type="text/css" media="all">
         p.bodyText {padding:0 8px;}
         p.introText {color:red; font-size:18px; line-height:20pt;}
         sup.footnote {font-size:9pt; line-height: 0.1em;}
         li.modeAbout {font-weight:normal; font-size:18px; line-height:20pt; padding-right:7px;}
+        div.stages {text-align:center;}
+        div.imageBox {height:300px; text-align:center;}
         </style>
+        <script type="application/x-javascript">
+        const stageCount = 1;
+        const stageMaxValues = [4]; // One-based to more easily match the picture filenames, so it's 1 to this number (inclusive)
+        var stageCurrentValues = [4]; // Start at the last so the first increment+display shows the first
+        function rotateImages()
+        {
+            //console.log('Rotating');
+            for (var stage = 1; stage <= stageCount; stage++)
+            {
+                stageCurrentValues[stage - 1]++;
+                if (stageCurrentValues[stage - 1] > stageMaxValues[stage - 1])
+                    stageCurrentValues[stage - 1] = 1;
+                var imageID = '#stage' + stage;
+                var newImage = '<div class="imageBox"><img src="images/stage' + stage + '-' + stageCurrentValues[stage - 1] + '.png"/></div>'
+                newImage += '<br/>' + stageCurrentValues[stage - 1];
+                //console.log(imageID);
+                //console.log(newImage);
+                $(imageID).fadeOut(500, function() {$(imageID).fadeIn(500).html(newImage)});
+            }
+        }
+        $(document).ready(function() {rotateImages(); window.setInterval(rotateImages, 5000);});
+        </script>
     </head>
     <body>
         <div class="toolbar">
@@ -55,7 +80,7 @@
             </li>
         </ul>
         <div id="mode1" title="Mode One">
-            Hello World
+            <div id="stage1" class="stages"></div>
         </div>
         <div id="mode2" title="Mode Two">
             Hello World
