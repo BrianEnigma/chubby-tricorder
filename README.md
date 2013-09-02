@@ -64,10 +64,10 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
     - [X] "Incorrect" animation (with delay to help discourage brute forcing)
     - [X] Several incorrect answers in a row has longer delay?
     - [X] Each "correct" behavior (screen, printer)
-- [ ] Wireless
+- [X] Wireless
     - [X] Transmitter and receiver Hello World
     - [X] Integrate transmitter into design
-    - [ ] Test with receiver
+    - [X] Test with receiver
 - [X] Enclosure (black 3MM acrylic)
     - [X] Determine internal parts placement.
     - [X] Preliminary laser cut pattern.
@@ -75,12 +75,23 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
     - [X] Print on paper, verify parts fit, verify pieces interlock correctly.
     - [X] Send to Ponoko.
     - [X] Hole for reprogramming?  "warranty void if removed" sticker?
-    - [ ] Reinforce printer edge panel
-- [ ] Advanced/optional software
-    - [ ] Bitmaps for screen and printer
-        - [ ] LCARS
-        - [ ] Starfleet logo
-        - [ ] Trek/communicator logo
+    - [X] Reinforce printer edge panel
+- [ ] Final software
+	- [ ] Image rotator with PIN entry
+	- [ ] RF xmission while rotating images
+	- [ ] Stages of image rotator
+	- [ ] Easter egg(s)?
+- [ ] "Plan B" webapp
+	- [X] Basics
+	- [ ] All content
+	- [ ] Preload images
+- [ ] Final documentation
+	- [ ] Prepare github
+	- [ ] Prepare website
+	- [ ] Prepare narrative blog post
+	- [ ] Prepare shortened URL
+	- [ ] Insert shortened URL plus intro text into code as easter egg
+- 
 
 #Away Kit
 
