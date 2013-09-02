@@ -4,6 +4,9 @@
 #include <ctype.h>
 #include <gd.h>
 
+#define DISPLAY_WIDTH  128
+#define DISPLAY_HEIGHT 56
+
 void createPrefix(const char *in, std::string *out)
 {
     const char *tmp;
@@ -41,6 +44,8 @@ int process(const char *filename)
     createPrefix(filename, &prefix);
     printf("#define %s_WIDTH  %d\n", prefix.c_str(), gdImageSX(image));
     printf("#define %s_HEIGHT %d\n", prefix.c_str(), gdImageSY(image));
+    printf("#define %s_X  %d\n", prefix.c_str(), DISPLAY_WIDTH / 2 - gdImageSX(image) / 2);
+    printf("#define %s_Y %d\n", prefix.c_str(), DISPLAY_HEIGHT / 2 - gdImageSY(image) / 2);
     printf("static unsigned char PROGMEM %s[] = {\n", prefix.c_str());
     for (int y = 0; y < gdImageSY(image); y++)
     {
