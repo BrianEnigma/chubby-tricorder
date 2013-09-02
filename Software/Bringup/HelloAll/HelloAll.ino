@@ -4,12 +4,14 @@
 #include <Adafruit_SSD1306.h>
 #include "SoftwareSerial.h"
 #include "Adafruit_Thermal.h"
+#if 0
 #include "VirtualWire.h"
+#endif
 #include <avr/pgmspace.h>
 
 // Debug settings
 //#define DEBUG_FAST_STARTUP_ANIM
-//#define DEBUG_SKIP_STARTUP
+#define DEBUG_SKIP_STARTUP
 
 // Display constants
 
@@ -50,17 +52,20 @@ void setup()
 {                
   //Serial.begin(9600);
 
-  // Display init  
+  // Display init
   display.begin(SSD1306_SWITCHCAPVCC);
   
-  // Keypad init (none)
+  // Keypad init
+  keypad.setDebounceTime(4);
   
   // Printer init
   printer.begin();
   
+#if 0
   // Wireless init
   vw_set_tx_pin(A5);
   vw_setup(2000);	 // Bits per sec
+#endif
   
   // Boot sequence
 #ifdef DEBUG_SKIP_STARTUP
@@ -176,8 +181,10 @@ void getEntry(char *entry, unsigned char maxLength)
     delay(10);
     if (loopCount++ >= 10)
     {
+#if 0      
       vw_send((uint8_t *)runMode, 1);
       vw_wait_tx(); // Wait until the whole message is gone
+#endif
       loopCount = 0;
     }
   }
@@ -253,10 +260,7 @@ void printBadEntry()
 char entry[32];
 void loop()
 {
-#ifdef DEBUG_SKIP_STARTUP
-#else
   damageSplashScreen();
-#endif
   while (1)
   {
     memset(entry, 0, sizeof(entry));
