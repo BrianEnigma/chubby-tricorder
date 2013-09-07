@@ -76,11 +76,19 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
     - [X] Send to Ponoko.
     - [X] Hole for reprogramming?  "warranty void if removed" sticker?
     - [X] Reinforce printer edge panel
+- [ ] Battery power
+    - [ ] Get battery holder
+    - [ ] Get batteries
+    - [ ] Wire up to 2.1mm plug
+    - [ ] Rewire RF to 5V regulator on Arduino
 - [ ] Final software
-	- [ ] Image rotator with PIN entry
-	- [ ] RF xmission while rotating images
-	- [ ] Stages of image rotator
-	- [ ] Easter egg(s)?
+	- [X] Image rotator with PIN entry
+	- [X] RF xmission while rotating images
+	- [X] Stages of image rotator
+	- [X] Easter egg(s)
+    - [ ] Build the more permanent RF receiver device
+    - [ ] Verify with RF receiver device
+    - [ ] Verify that one easter egg that wasn't working at meeting
 - [ ] "Plan B" webapp
 	- [X] Basics
 	- [ ] All content
@@ -98,7 +106,9 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
 In the event of a problem during the game, I'll need to assemble an "away kit" with various repair tools.
 
 - allen wrench
-- needle-node pliers
+- needle-nose pliers
+- diagonal clippers
 - multimeter
-- soldering iron?
+- soldering iron, solder
 - 
+
