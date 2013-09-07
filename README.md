@@ -23,6 +23,7 @@ I cut some corners to accelerate development and minimize risk.  I wanted to wor
     - [button pad](http://www.adafruit.com/products/419)
     - [illuminated power switch](http://www.adafruit.com/products/482)
     - [panel power connector](http://www.adafruit.com/products/610)
+    - RF module
     - [5V 2A AC adapter](http://www.adafruit.com/products/276)
     - assorted bits and bobs
         - hookup wire
@@ -77,10 +78,13 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
     - [X] Hole for reprogramming?  "warranty void if removed" sticker?
     - [X] Reinforce printer edge panel
 - [ ] Final software
-	- [ ] Image rotator with PIN entry
-	- [ ] RF xmission while rotating images
-	- [ ] Stages of image rotator
-	- [ ] Easter egg(s)?
+	- [X] Image rotator with PIN entry
+	- [X] RF xmission while rotating images
+	- [X] Stages of image rotator
+	- [X] Easter egg(s)?
+	- [ ] Comments
+	- [ ] Licensing
+	- [ ] Publish LCD assistant code separately?
 - [ ] "Plan B" webapp
 	- [X] Basics
 	- [ ] All content

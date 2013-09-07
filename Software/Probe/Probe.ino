@@ -7,7 +7,7 @@
 #include <avr/pgmspace.h>
 
 // Debug settings
-#define DEBUG_FAST_STARTUP_ANIM
+//#define DEBUG_FAST_STARTUP_ANIM
 //#define DEBUG_SKIP_STARTUP
 
 // #######################################################
@@ -834,7 +834,7 @@ void doFinal()
     printer.println(F(" >>STORED MESSAGE<< "));
     printer.inverseOff();
     printer.underlineOn();
-    printer.println(F("All ships"));
+    printer.println(F("\nAll ships"));
     printer.underlineOff();
     printer.println(F(
       "\n"
@@ -962,8 +962,9 @@ void cyclePictureDataEntry(char *entry, unsigned char maxLength)
                 display.print(F("% repaired"));
                 
                 display.setCursor(0, SSD1306_LCDHEIGHT / 8 * 4);
-                display.println(F(
-                    "Enter 4-digit memory\n"
+                display.print(F("Enter "));
+                display.print('C' == runMode ? F("6") : F("4"));
+                display.println(F("-digit memory\n"
                     "address of repair\n"
                     "routine to execute:"));
                 break;
@@ -1042,9 +1043,9 @@ void cyclePictureDataEntry(char *entry, unsigned char maxLength)
     if ('#' == key)
       return;
     delay(10);
-    // Broadcast run mode via RF every 50ms.
-    // TODO: this is a cumulative 50ms delay, but what about the execution time of updating the display?
-    if (broadcastCounter++ >= 5)
+    // Broadcast run mode via RF every 30ms of cumulative delay()
+    // function calls, which roughly equals 50ms of wall time.
+    if (broadcastCounter++ >= 3)
     {
         Serial.write(runMode);
         broadcastCounter = 0;
@@ -1059,27 +1060,27 @@ void cyclePictureDataEntry(char *entry, unsigned char maxLength)
 
 unsigned char handleEntry(const char *entry)
 {
-  if ('A' == runMode && strcmp_P(entry, PSTR("1111")) == 0)
+  if ('A' == runMode && strcmp_P(entry, PSTR("4985")) == 0)
   {
     doRepair();
     return 1;
   }
-  if ('B' == runMode && strcmp_P(entry, PSTR("2222")) == 0)
+  if ('B' == runMode && strcmp_P(entry, PSTR("3144")) == 0)
   {
     doRepair();
     return 1;
   }
-  if ('C' == runMode && strcmp_P(entry, PSTR("3333")) == 0)
+  if ('C' == runMode && strcmp_P(entry, PSTR("147713")) == 0)
   {
     doRepair();
     return 1;
   }
-  if ('D' == runMode && strcmp_P(entry, PSTR("4444")) == 0)
+  if ('D' == runMode && strcmp_P(entry, PSTR("4455")) == 0)
   {
     doRepair();
     return 1;
   }
-  if ('E' == runMode && strcmp_P(entry, PSTR("5555")) == 0)
+  if ('E' == runMode && strcmp_P(entry, PSTR("4982")) == 0)
   {
     doRepair();
     return 1;
@@ -1122,7 +1123,11 @@ unsigned char handleEntry(const char *entry)
     printer.inverseOn();
     printer.println(F(" EXECUTING REPAIR CODE 867-5309 "));
     printer.inverseOff();
-    printer.println(F("\nJenny, I got your number\nI need to make you mine\nJenny, don't change your number\n867-5309\n\n\n\n"));
+    printer.println(F(
+        "\nJenny, I got your number\n"
+        "I need to make you mine\n"
+        "Jenny, don't change your number\n"
+        "867-5309\n\n\n\n"));
     return 1;    
   }
 #endif
@@ -1143,6 +1148,7 @@ unsigned char handleEntry(const char *entry)
     printer.doubleHeightOn();
     printer.println(F("http://nja.me/probe"));
     printer.doubleHeightOff();
+#if 0
     printer.println(F(
       "\n"
       "This is a great platform for\n"
@@ -1150,8 +1156,9 @@ unsigned char handleEntry(const char *entry)
       "for messing around, home\n"
       "automation, or puzzle design.\n"
       "If you have specific project\n"
-      "ideas, let me help you out.\n\n\n\n\n"));
-    printer.setSize('M');
+      "ideas, let me help you out.\n"));
+#endif
+    printer.println(F("\n\n\n\n"));
     return 1;
   }
 #endif
