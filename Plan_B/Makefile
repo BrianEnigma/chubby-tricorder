@@ -24,7 +24,7 @@ test: $(INSTALL_FOLDER)
 	cp -vR $(INSTALL_FOLDER) index.html *.js *.map images $(HOME)/Sites/tricorder
 
 upload:
-	rsync --rsh=ssh -r $(INSTALL_FOLDER) index.html *.js *.map images nja:/var/www/netninja.com/fun/planb/
+	rsync --rsh=ssh -r $(INSTALL_FOLDER) index.html *.js *.map images nja:/var/www/netninja.com/fun/3cord/
 
 .PHONY: clean
 clean:
