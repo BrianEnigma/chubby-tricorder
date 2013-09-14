@@ -828,29 +828,35 @@ void doFinal()
     display.clearDisplay();
     display.setTextSize(1);
     display.setTextColor(WHITE, BLACK);
-    display.println(F(">>STORED MESSAGE<<\n\nReconstructed.\n\nPrinting..."));
+    display.setCursor(0,0);
+    display.println(F(">>STORED MESSAGE<<"));
+    display.println(F(""));
+    display.println(F("Reconstructed."));
+    display.println(F(""));
+    display.println(F("Printing..."));
     display.display();
+    delay(500);
     printer.inverseOn();
     printer.println(F(" >>STORED MESSAGE<< "));
     printer.inverseOff();
     printer.underlineOn();
+    delay(500);
     printer.println(F("\nAll ships"));
     printer.underlineOff();
-    printer.println(F(
-      "\n"
-      "The fleet will stop at Sol V to\n"
-      "resupply metallic hydrogen\n"
-      "before final assault on\n"
-      "Sol III. Maintain silence and\n"
-      "safe distance from sensors on\n"
-      "Jupiter Station. Due to\n"
-      "unexpected spacetime anomaly.\n"
-      "half the fleet will attack a\n"
-      "defenseless human homeworld.\n"
-      "Strip the planet of resources\n"
-      "and return to prime dimension\n"
-      "immediately. Beware of\n"
-      "interdimensional flux.\n\n\n\n\n"));
+    delay(500);
+    printer.println(F("\nThe fleet will stop at Sol V to\n"));
+    printer.println(F("resupply metallic hydrogen\n"));
+    printer.println(F("before final assault on\n"));
+    printer.println(F("Sol III. Maintain silence and\n"));
+    printer.println(F("safe distance from sensors on\n"));
+    printer.println(F("Jupiter Station. Due to\n"));
+    printer.println(F("unexpected spacetime anomaly.\n"));
+    printer.println(F("half the fleet will attack a\n"));
+    printer.println(F("defenseless human homeworld.\n"));
+    printer.println(F("Strip the planet of resources\n"));
+    printer.println(F("and return to prime dimension\n"));
+    printer.println(F("immediately. Beware of\n"));
+    printer.println(F("interdimensional flux.\n\n\n\n\n"));
     while (1)
     {
         display.clearDisplay();
@@ -899,8 +905,6 @@ void doRepair()
   {
     if (0 != keypad.getKey())
     {
-      if ('F' == runMode)
-          doFinal();
       return;
     }
     delay(100);
@@ -1086,6 +1090,13 @@ unsigned char handleEntry(const char *entry)
     return 1;
   }
   
+  if (strcmp_P(entry, PSTR("911911")) == 0)
+  {
+    runMode = 'E';
+    doRepair();
+    return 1;
+  }
+  
   // Note that the printer is 20 characters wide.
 #if 1
   if (strcmp_P(entry, PSTR("42")) == 0)
@@ -1123,11 +1134,10 @@ unsigned char handleEntry(const char *entry)
     printer.inverseOn();
     printer.println(F(" EXECUTING REPAIR CODE 867-5309 "));
     printer.inverseOff();
-    printer.println(F(
-        "\nJenny, I got your number\n"
-        "I need to make you mine\n"
-        "Jenny, don't change your number\n"
-        "867-5309\n\n\n\n"));
+    printer.println(F("\nJenny, I got your number"));
+    printer.println(F("I need to make you mine"));
+    printer.println(F("Jenny, don't change your number"));
+    printer.println(F("867-5309\n\n\n\n"));
     return 1;    
   }
 #endif
@@ -1137,26 +1147,21 @@ unsigned char handleEntry(const char *entry)
     printer.inverseOn();
     printer.println(F(" EXECUTING REPAIR CODE \"LOST\" "));
     printer.inverseOff();
-    printer.println(F(
-      "This device is a gift to you.\n"
-      "\n"
-      "It is an Open Source platform\n"
-      "built around the Arduino.\n"
-      "Details of the build\n"
-      "process, hardware, and software\n"
-      "are at:\n"));
+    printer.println();
+    printer.println(F("This device is a gift to you."));
+    printer.println();
+    printer.println(F("It is an Open Source platform"));
+    printer.println(F("built around the Arduino."));
+    printer.println(F("Details of the build"));
+    printer.println(F("process, hardware, and software"));
+    printer.println(F("are at:"));
     printer.doubleHeightOn();
     printer.println(F("http://nja.me/probe"));
     printer.doubleHeightOff();
 #if 0
-    printer.println(F(
-      "\n"
-      "This is a great platform for\n"
-      "learning the Arduino, whether\n"
-      "for messing around, home\n"
-      "automation, or puzzle design.\n"
-      "If you have specific project\n"
-      "ideas, let me help you out.\n"));
+    printer.println();
+    printer.println(F("Void your warranty."));
+    printer.println();
 #endif
     printer.println(F("\n\n\n\n"));
     return 1;
@@ -1198,7 +1203,7 @@ char entry[32] = {0};
 void loop()
 {
   damageSplashScreen();
-  while (1)
+  while ('F' != runMode)
   {
     memset(entry, 0, sizeof(entry));
     cyclePictureDataEntry(entry, 11);
@@ -1207,6 +1212,6 @@ void loop()
       printBadEntry();
     }
   }
-  
+  doFinal();
 }
 
