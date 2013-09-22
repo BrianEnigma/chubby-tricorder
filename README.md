@@ -44,7 +44,6 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
 - screen
 - printer
 - button matrix
-- RF
 
 #Tasks
 
@@ -88,17 +87,17 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
 	- [X] Stages of image rotator
 	- [X] Easter egg(s)
 	- [ ] Comments
-	- [ ] Licensing
+	- [X] Licensing
 	- [ ] Publish LCD assistant code separately?
     - [X] Build the more permanent RF receiver device
     - [X] Verify with RF receiver device
-    - [ ] Verify that one easter egg that wasn't working at meeting
+    - [X] Verify that one easter egg that wasn't working at meeting
 - [X] "Plan B" webapp
 	- [X] Basics
 	- [X] All content
 	- [X] Preload images - skipped; iPhone times out preloading and aborts JavaScript
 - [ ] Final documentation
-	- [ ] Prepare github
+	- [X] Prepare github
 	- [ ] Prepare website
 	- [ ] Prepare narrative blog post
 	- [ ] Prepare shortened URL
@@ -116,4 +115,10 @@ In the event of a problem during the game, I'll need to assemble an "away kit" w
 - soldering iron, solder
 - helping hands
 - 
+
+#License
+
+The Chubby Tricorder (https://github.com/BrianEnigma/chubby-tricorder)by Brian 
+Enigma (http://netninja.com) is licensed under a Creative Commons Attribution-ShareAlike 
+3.0 Unported License: http://creativecommons.org/licenses/by-sa/3.0/deed.en_US 
 
