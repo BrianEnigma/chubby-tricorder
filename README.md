@@ -8,7 +8,8 @@ I cut some corners to accelerate development and minimize risk.  I wanted to wor
 
 - I used an off-the-shelf microcontroller board: the Arduino.  It's large and a little slow by microcontroller standards, but board bring-up is easy and there are hundreds of premade/pre-tested hardware accessory libraries.
 - I used no batteries. The printer eats a ton of power. I didn't want to spend money on hefty batteries, which would tempt prolonged use, which in turn heightens the risk of dead batteries at a critical time.
-- The case is a simple laser-cut acrylic box of a design similar to the [InfoNinja][] and my [nameplate][] using tabs, slots, and bolted mortise and tension joints.
+    - Edit: I used batteries. The puzzle's location changed from indoors to outdoors, so I hacked up a battery pack.
+- The case is a simple laser-cut acrylic box of a design similar to the [InfoNinja][] and my [nameplate][] using tabs, slots, and bolted mortise and tension joints. It's entirely right angles, greatly simplifying the design.
 
 [InfoNinja]: http://netninja.com/projects/infoninja/
 [nameplate]: http://netninja.com/2012/08/20/a-laser-cut-light-up-nameplate/
@@ -86,7 +87,7 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
 	- [X] RF xmission while rotating images
 	- [X] Stages of image rotator
 	- [X] Easter egg(s)
-	- [ ] Comments
+	- [ ] Better comments
 	- [X] Licensing
 	- [ ] Publish LCD assistant code separately?
     - [X] Build the more permanent RF receiver device
@@ -101,8 +102,7 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
 	- [ ] Prepare website
 	- [ ] Prepare narrative blog post
 	- [ ] Prepare shortened URL
-	- [ ] Insert shortened URL plus intro text into code as easter egg
-- 
+	- [X] Insert shortened URL plus intro text into code as easter egg
 
 #Away Kit
 
@@ -114,7 +114,6 @@ In the event of a problem during the game, I'll need to assemble an "away kit" w
 - multimeter
 - soldering iron, solder
 - helping hands
-- 
 
 #License
 
