@@ -99,11 +99,11 @@ Makes use of the Arduino IDE plus several 3rd party libraries:
 	- [X] Basics
 	- [X] All content
 	- [X] Preload images - skipped; iPhone times out preloading and aborts JavaScript
-- [ ] Final documentation
+- [X] Final documentation
 	- [X] Prepare github
-	- [ ] Prepare website
-	- [ ] Prepare narrative blog post
-	- [ ] Prepare shortened URL
+	- [X] Prepare website
+	- [X] Prepare narrative blog post
+	- [X] Prepare shortened URL
 	- [X] Insert shortened URL plus intro text into code as easter egg
 
 #Away Kit
