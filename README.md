@@ -1,5 +1,7 @@
 #The Chubby Tricorder Project
 
+![Image](https://raw.github.com/BrianEnigma/chubby-tricorder/master/Images/probe.png)
+
 Overview goes here.
 
 #Design Decisions
